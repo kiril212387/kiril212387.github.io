@@ -24,23 +24,23 @@
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Ім'я:</span>
-                            <input class="sign-in-form-field-input" type="text" name="first-name" required>
+                            <input class="sign-in-form-field-input" type="text" name="first-name" pattern="[A-z]*" autocomplete="off" required>
                         </label>
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Прізвище:</span>
-                            <input class="sign-in-form-field-input" type="text" name="last-name" required>
+                            <input class="sign-in-form-field-input" type="text" name="last-name" pattern="[A-z]*" autocomplete="off" required>
                         </label>
 
                         <label class="sign-in-form-field">
-                            <span class="sign-in-form-field-text">Електрона пошта:</span>
-                            <input class="sign-in-form-field-input" type="email" name="email" required>
+                            <span class="sign-in-form-field-text">Електронна пошта:</span>
+                            <input class="sign-in-form-field-input" type="email" name="email" autocomplete="on" required>
                         </label>
 
                         <div class="sign-in-form-password">
                             <label class="sign-in-form-field">
                                 <span class="sign-in-form-field-text">Пароль:</span>
-                                <input class="sign-in-form-field-input sign-in-form-password-field-input" type="password" name="password" minlength="8" pattern="\w*" required>
+                                <input class="sign-in-form-field-input sign-in-form-password-field-input" type="password" name="password" pattern="\w*" autocomplete="off" minlength="8" required>
                             </label>
 
                             <label class="sign-in-form-password-visibility-field">
