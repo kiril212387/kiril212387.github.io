@@ -16,41 +16,43 @@
         <script src="/scripts/sign-in.js" defer></script>
     </head>
     <body>
-        <section class="sign-in">
-            <form class="sign-in-form" name="sign-in" method="post" action="#">
-                <fieldset class="sign-in-form-fields">
-                    <legend class="sign-in-form-fields-legend">Персональна інформація</legend>
+        <main>
+            <section class="sign-in">
+                <form class="sign-in-form" name="sign-in" method="post" action="#">
+                    <fieldset class="sign-in-form-fields">
+                        <legend class="sign-in-form-fields-legend">Персональна інформація</legend>
 
-                    <label class="sign-in-form-field">
-                        <span class="sign-in-form-field-text">Ім'я:</span>
-                        <input class="sign-in-form-field-input" type="text" name="first-name" required>
-                    </label>
-
-                    <label class="sign-in-form-field">
-                        <span class="sign-in-form-field-text">Прізвище:</span>
-                        <input class="sign-in-form-field-input" type="text" name="last-name" required>
-                    </label>
-
-                    <label class="sign-in-form-field">
-                        <span class="sign-in-form-field-text">Електрона пошта:</span>
-                        <input class="sign-in-form-field-input" type="email" name="email" required>
-                    </label>
-
-                    <div class="sign-in-form-password">
                         <label class="sign-in-form-field">
-                            <span class="sign-in-form-field-text">Пароль:</span>
-                            <input class="sign-in-form-field-input" type="password" name="password" minlength="8" pattern="\w*" required>
+                            <span class="sign-in-form-field-text">Ім'я:</span>
+                            <input class="sign-in-form-field-input" type="text" name="first-name" required>
                         </label>
 
-                        <label class="sign-in-form-password-visibility-field">
-                            <input type="checkbox" name="password-visibility">
-                            <span>Показати пароль</span>
+                        <label class="sign-in-form-field">
+                            <span class="sign-in-form-field-text">Прізвище:</span>
+                            <input class="sign-in-form-field-input" type="text" name="last-name" required>
                         </label>
-                    </div>
-                </fieldset>
 
-                <button class="sign-in-form-submit" type="submit">Зареєструватись</button>
-            </form>
-        </section>
+                        <label class="sign-in-form-field">
+                            <span class="sign-in-form-field-text">Електрона пошта:</span>
+                            <input class="sign-in-form-field-input" type="email" name="email" required>
+                        </label>
+
+                        <div class="sign-in-form-password">
+                            <label class="sign-in-form-field">
+                                <span class="sign-in-form-field-text">Пароль:</span>
+                                <input class="sign-in-form-field-input" type="password" name="password" minlength="8" pattern="\w*" required>
+                            </label>
+
+                            <label class="sign-in-form-password-visibility-field">
+                                <input type="checkbox" name="password-visibility">
+                                <span>Показати пароль</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <button class="sign-in-form-submit" type="submit">Зареєструватись</button>
+                </form>
+            </section>
+        </main>
     </body>
 </html>
