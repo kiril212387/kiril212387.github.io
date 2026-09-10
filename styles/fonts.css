@@ -5,3 +5,11 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    src: local("InputMonoNarrow-Regular"), url("/fonts/InputMonoNarrow-Regular.ttf") format("truetype");
+
+    font-family: "Input Mono Narrow";
+    font-weight: 400;
+    font-style: normal;
+}
