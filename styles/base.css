@@ -17,18 +17,6 @@ body {
     background-color: hsl(var(--color-bg1));
 }
 
-:where(input, button) {
-    font-size: inherit;
-}
-
-:where(input, button):hover {
-    border-color: hsl(var(--color-ui2));
-}
-
-:where(input, button):active {
-    border-color: hsl(var(--color-ui3));
-}
-
 input {
     appearance: none;
 
@@ -87,6 +75,18 @@ button {
     background-color: hsl(var(--color-bg2));
 }
 
+:where(input, button) {
+    font-size: inherit;
+}
+
+:where(input, button):hover {
+    border-color: hsl(var(--color-ui2));
+}
+
+:where(input, button):active {
+    border-color: hsl(var(--color-ui3));
+}
+
 a {
     color: hsl(var(--color-tx1));
 
@@ -111,5 +111,5 @@ a:visited {
 }
 
 :where(input, button, a):focus-visible {
-    outline: hsl(var(--color-blue)) dashed 0.125em;
+    outline-style: dashed;
 }
