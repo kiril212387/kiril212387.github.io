@@ -13,6 +13,9 @@
     --color-blue-600: 212.2deg, 67.7%, 38.8%;
     --color-blue-400: 207.8deg, 48.6%, 50.4%;
 
+    --color-purple-600: 60, 81.82%, 43.14%;
+    --color-purple-400: 250.54, 40.22%, 63.92%;
+
     --scheme-light-bg: var(--color-base-paper);
     --scheme-light-bg2: var(--color-base-50);
 
@@ -23,6 +26,7 @@
     --scheme-light-ui3: var(--color-base-200);
 
     --scheme-light-blue: var(--color-blue-600);
+    --scheme-light-purple: var(--color-purple-600);
 
     --scheme-dark-bg: var(--color-base-black);
     --scheme-dark-bg2: var(--color-base-950);
@@ -34,6 +38,7 @@
     --scheme-dark-ui3: var(--color-base-800);
 
     --scheme-dark-blue: var(--color-blue-400);
+    --scheme-dark-purple: var(--color-purple-400);
 }
 
 @media (prefers-color-scheme: light) {
@@ -48,8 +53,10 @@
         --color-ui3: var(--scheme-light-ui3);
 
         --color-blue: var(--scheme-light-blue);
+        --color-purple: var(--scheme-light-purple);
 
         --color-blue2: var(--scheme-dark-blue);
+        --color-purple2: var(--scheme-dark-purple);
     }
 }
 
@@ -65,7 +72,9 @@
         --color-ui3: var(--scheme-dark-ui3);
 
         --color-blue: var(--scheme-dark-blue);
+        --color-purple: var(--scheme-dark-purple);
 
         --color-blue2: var(--scheme-light-blue);
+        --color-purple2: var(--scheme-light-purple);
     }
 }
