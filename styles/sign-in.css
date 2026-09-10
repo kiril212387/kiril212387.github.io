@@ -1,0 +1,69 @@
+.sign-in {
+    display: flex;
+
+    min-block-size: 100dvh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-form {
+    padding: 2rem;
+    border: hsl(var(--color-ui1)) solid 0.125rem;
+
+    border-radius: 0.25rem;
+}
+
+.sign-in-form-fields {
+    display: flex;
+
+    margin: 0;
+    border: hsl(var(--color-ui1)) solid 0.125rem;
+    padding: 1rem;
+
+    flex-direction: column;
+    row-gap: 1.5rem;
+
+    border-radius: 0.5rem;
+}
+
+.sign-in-form-fields-legend {
+    border: hsl(var(--color-ui1)) solid 0.125rem;
+    padding: 0.25em;
+
+    border-radius: 0.125rem;
+}
+
+.sign-in-form-field {
+    display: inline-flex;
+    flex-direction: column;
+
+    row-gap: 0.5rem;
+}
+
+.sign-in-form-field-input {
+    min-inline-size: 12rem;
+    max-inline-size: 24rem;
+}
+
+.sign-in-form-password {
+    display: flex;
+
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.sign-in-form-password-visibility-field {
+    display: inline-flex;
+
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+.sign-in-form-submit {
+    inline-size: 100%;
+}
+
+.sign-in-form-submit:not(:first-child) {
+    margin-block-start: 1rem;
+}

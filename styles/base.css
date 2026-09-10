@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Inter;
+
+    color: hsl(var(--color-tx1));
+    background-color: hsl(var(--color-bg1));
+}
+
+:where(input, button) {
+    font-size: inherit;
+}
+
+:where(input, button):hover {
+    border-color: hsl(var(--color-ui2));
+}
+
+:where(input, button):active {
+    border-color: hsl(var(--color-ui3));
+}
+
+input {
+    appearance: none;
+
+    border: hsl(var(--color-ui1)) solid 0.25em;
+    padding: 0.25em;
+
+    color: hsl(var(--color-tx1));
+    background-color: hsl(var(--color-bg2));
+
+    field-sizing: content;
+}
+
+input[type="checkbox"] {
+    display: inline-flex;
+
+    margin: 0;
+    border-width: 0.125em;
+    padding: 0;
+    inline-size: 1em;
+    block-size: 1em;
+
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="checkbox"]::after {
+    content: "";
+
+    inline-size: 0.375em;
+    block-size: 0.375em;
+}
+
+input[type="checkbox"]:checked {
+    border-color: hsl(var(--color-blue));
+}
+
+input[type="checkbox"]:checked::after {
+    background-color: hsl(var(--color-blue));
+}
+
+input[type="checkbox"]:checked:hover {
+    border-color: hsl(var(--color-blue2));
+}
+
+input[type="checkbox"]:checked:hover::after {
+    background-color: hsl(var(--color-blue2));
+}
+
+button {
+    appearance: none;
+
+    border: hsl(var(--color-ui1)) solid 0.25em;
+    padding: 0.5em;
+
+    color: hsl(var(--color-tx1));
+    background-color: hsl(var(--color-bg2));
+}
+
+a {
+    color: hsl(var(--color-tx1));
+
+    text-decoration: underline wavy hsl(var(--color-blue));
+    text-decoration-skip-ink: none;
+}
+
+a:hover {
+    color: hsl(var(--color-blue));
+}
+
+a:active {
+    color: hsl(var(--color-blue2));
+}
+
+a:visited {
+    text-decoration-color: hsl(var(--color-purple));
+}
+
+:where(input, button, a):focus {
+    outline: hsl(var(--color-blue)) dashed 0.125em;
+}
