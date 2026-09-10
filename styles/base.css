@@ -106,6 +106,10 @@ a:visited {
     text-decoration-color: hsl(var(--color-purple));
 }
 
-:where(input, button, a):focus {
+:where(input, button, a):focus-visible {
     outline: hsl(var(--color-blue)) dashed 0.125em;
+}
+
+:where(input, button, a):focus {
+    outline: hsl(var(--color-blue)) double 0.125em;
 }
