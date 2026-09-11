@@ -24,12 +24,12 @@
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Ім'я:</span>
-                            <input class="sign-in-form-field-input" type="text" name="first-name" pattern="[A-z]*" autocomplete="off" required>
+                            <input class="sign-in-form-field-input" type="text" name="first-name" pattern="[A-z]*" autocomplete="off" minlength="2" maxlength="34" required>
                         </label>
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Прізвище:</span>
-                            <input class="sign-in-form-field-input" type="text" name="last-name" pattern="[A-z]*" autocomplete="off" required>
+                            <input class="sign-in-form-field-input" type="text" name="last-name" pattern="[A-z]*" minlength="2" maxlength="34" autocomplete="off" required>
                         </label>
 
                         <label class="sign-in-form-field">
@@ -40,7 +40,7 @@
                         <div class="sign-in-form-password">
                             <label class="sign-in-form-field">
                                 <span class="sign-in-form-field-text">Пароль:</span>
-                                <input class="sign-in-form-field-input sign-in-form-password-field-input" type="password" name="password" pattern="\w*" autocomplete="yes" minlength="8" required>
+                                <input class="sign-in-form-field-input sign-in-form-password-field-input" type="password" name="password" pattern="\w*" autocomplete="yes" minlength="8" maxlength="36" required>
                             </label>
 
                             <label class="sign-in-form-password-visibility-field">
