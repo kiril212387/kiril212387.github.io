@@ -11,7 +11,7 @@ html {
 body {
     margin: 0;
 
-    font-family: Inter;
+    font-family: Inter, sans-serif;
 
     color: hsl(var(--color-tx1));
     background-color: hsl(var(--color-bg1));
