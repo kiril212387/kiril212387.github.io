@@ -34,7 +34,7 @@ signInFormElement.addEventListener("submit", (event) => {
 
     const json = JSON.stringify(payload);
 
-    console.alert(json);
+    alert(json);
 });
 
 passwordVisibilityCheckbox.addEventListener("change", () => {
