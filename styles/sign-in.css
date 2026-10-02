@@ -28,10 +28,10 @@
 }
 
 .sign-in-form-fields-legend {
-    border: hsl(var(--color-ui1)) solid 0.125rem;
+    border: hsl(var(--color-ui1)) solid 0.125em;
     padding: 0.25em;
 
-    border-radius: 0.125rem;
+    border-radius: 0.125em;
 }
 
 .sign-in-form-field {
@@ -42,8 +42,8 @@
 }
 
 .sign-in-form-field-input {
-    min-inline-size: 12rem;
-    max-inline-size: 24rem;
+    min-inline-size: 10em;
+    max-inline-size: 24em;
 }
 
 .sign-in-form-password {

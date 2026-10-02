@@ -1,0 +1,49 @@
+details {
+    margin-block: 1rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.line-through {
+    text-decoration-style: solid;
+    text-decoration-line: line-through;
+}
+
+.path::before {
+    content: "«";
+}
+
+.path::after {
+    content: "»";
+}
+
+.TeX > sup {
+    vertical-align: 0%;
+}
+
+.TeX > sub {
+    vertical-align: -15%;
+}
+
+.msg {
+    border-inline-end: 0.0675em solid hsl(var(--color-blue));
+}
+
+.container {
+    --container-limit: 48rem;
+    --container-offset: 1rem;
+
+    inline-size: 100%;
+    max-inline-size: min(100% - var(--container-offset) * 2, var(--container-limit));
+    margin-inline: auto;
+}
+
+.emphasize {
+    font-style: italic;
+}
