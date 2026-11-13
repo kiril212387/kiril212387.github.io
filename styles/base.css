@@ -128,6 +128,7 @@ button {
 }
 
 details {
+    margin-blocK: 1rem;
     border: hsl(var(--color-ui1)) solid 0.125em;
 
     color: hsl(var(--color-tx1));
@@ -161,16 +162,22 @@ a {
     font-size: inherit;
     font-family: inherit;
 
-    &:hover {
-        border-color: hsl(var(--color-ui2));
+    &:not([disabled]) {
+        &:hover {
+            border-color: hsl(var(--color-ui2));
+        }
+
+        &:active {
+            border-color: hsl(var(--color-ui3));
+        }
     }
 
-    &:active {
-        border-color: hsl(var(--color-ui3));
+    &[disabled] {
+        filter: contrast(75%);
     }
 }
 
-:where(input, button, a) {
+:where(input:not([disabled]), button:not([disabled]), a) {
     &:focus {
         outline: hsl(var(--color-blue)) double 0.125em;
     }

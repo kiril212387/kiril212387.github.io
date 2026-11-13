@@ -35,6 +35,8 @@
 }
 
 .sign-in-form-field {
+    position: relative;
+
     display: inline-flex;
     flex-direction: column;
 
@@ -44,6 +46,15 @@
 .sign-in-form-field-input {
     min-inline-size: 10em;
     max-inline-size: 24em;
+}
+
+.sign-in-form-field-error {
+    font-size: 0.75em;
+    font-style: italic;
+}
+
+.sign-in-form-field-error:empty::before {
+    content: "Все правильно!";
 }
 
 .sign-in-form-password {

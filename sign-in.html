@@ -19,33 +19,37 @@
     <body>
         <main>
             <section class="sign-in">
-                <form class="sign-in-form" name="sign-in" method="post" action="#">
+                <form class="sign-in-form" name="sign-in" method="post" action="#" novalidate>
                     <fieldset class="sign-in-form-fields">
                         <legend class="sign-in-form-fields-legend">Персональна інформація</legend>
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Ім'я:</span>
-                            <input class="sign-in-form-field-input" type="text" name="first-name" autocomplete="off" minlength="2" maxlength="34" required>
+                            <input class="sign-in-form-field-input" type="text" name="first-name" autocomplete="off">
+                            <span class="sign-in-form-field-error" data-field-error></span>
                         </label>
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Прізвище:</span>
-                            <input class="sign-in-form-field-input" type="text" name="last-name" minlength="2" maxlength="34" autocomplete="off" required>
+                            <input class="sign-in-form-field-input" type="text" name="last-name" autocomplete="off">
+                            <span class="sign-in-form-field-error" data-field-error></span>
                         </label>
 
                         <label class="sign-in-form-field">
                             <span class="sign-in-form-field-text">Електронна пошта:</span>
-                            <input class="sign-in-form-field-input" type="email" name="email" autocomplete="on" required>
+                            <input class="sign-in-form-field-input" type="email" name="email" autocomplete="on">
+                            <span class="sign-in-form-field-error" data-field-error></span>
                         </label>
 
                         <div class="sign-in-form-password">
                             <label class="sign-in-form-field">
                                 <span class="sign-in-form-field-text">Пароль:</span>
-                                <input class="sign-in-form-field-input sign-in-form-password-field-input number" type="password" name="password" pattern="\w*" autocomplete="yes" minlength="8" maxlength="36" required>
+                                <input class="sign-in-form-field-input sign-in-form-password-field-input number" type="password" name="password" autocomplete="on">
+                                <span class="sign-in-form-field-error" data-field-error></span>
                             </label>
 
                             <label class="sign-in-form-password-visibility-field">
-                                <input type="checkbox" name="password-visibility">
+                                <input type="checkbox" name="password-visibility" autocomplete="off">
                                 <span>Показати пароль</span>
                             </label>
                         </div>
