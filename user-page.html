@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+    <head>
+        <title>Сторінка користувача</title>
+
+        <meta name="charset" content="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="./styles/user-page.css">
+
+        <script type="module" src="./scripts/user-page.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <section class="container">
+                <h1>Сторінка користувача</h1>
+                <div class="person-data">
+                    <h2 class="person-data-title">Персональні дані</h2>
+                    <p class="person-data-entry">Ім’я: <span class="monospace" data-user-first-name></span></p>
+                    <p class="person-data-entry">Прізвище: <span class="monospace" data-user-last-name></span></p>
+                    <p class="person-data-entry">Адреса електронної пошти: <span class="monospace" data-user-email></span></p>
+                    <p class="person-data-entry">Хеш пароля: <span class="monospace" data-user-password></span></p>
+                </div>
+                <p class="user-page-content">
+                    На цю сторінку можна потрапити <span class="emphasize">тільки</span> якщо увійти як користувач.
+                    За цим процесом слідкує файл <span class="path">/scripts/user-page.js</span>,
+                    який у разі виявлення незареєстрованого користувача перенаправить по URL <span class="path">/unreachable</span>,
+                    або якщо користувач <span class="emphasize">зареєстрований</span>, але є адміністратором чи користувачем з іншою <span class="emphasize">роллю</span> то перенесе вже на сторінку
+                    <span class="path">/access-denied</span>.
+                </p>
+            </section>
+        </main>
+    </body>
+</html>

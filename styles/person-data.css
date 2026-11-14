@@ -1,0 +1,31 @@
+@import url("./variables.css");
+
+.person-data {
+    margin-inline: auto;
+    padding: 1rem;
+    max-inline-size: 30rem;
+
+    border-radius: 0.25rem;
+    background-color: hsl(var(--color-bg2));
+}
+
+.person-data-title {
+    margin-block-start: 0;
+}
+
+.person-data-entry {
+    padding: 0.25em;
+
+    border-radius: 0.175em;
+    background-color: hsl(var(--color-ui1));
+
+    text-indent: 0;
+}
+
+.person-data-entry:not(:first-child) {
+    margin-block-start: 0.5em;
+}
+
+.person-data-entry > span {
+    word-break: break-all;
+}

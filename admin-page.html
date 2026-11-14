@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+    <head>
+        <title>Сторінка адміністратора</title>
+
+        <meta name="charset" content="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
+
+        <link rel="stylesheet" href="./styles/admin-page.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js" defer></script>
+        <script type="module" src="./scripts/admin-page.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <section class="container">
+                <h1>Сторінка адміністратора</h1>
+                <div class="person-data">
+                    <h2 class="person-data-title">Персональні дані</h2>
+                    <p class="person-data-entry">Ім’я: <span class="monospace" data-user-first-name></span></p>
+                    <p class="person-data-entry">Прізвище: <span class="monospace" data-user-last-name></span></p>
+                    <p class="person-data-entry">Адреса електронної пошти: <span class="monospace" data-user-email></span></p>
+                    <p class="person-data-entry">Хеш пароля: <span class="monospace" data-user-password></span></p>
+                </div>
+                <ul class="users" data-users>
+                </ul>
+            </section>
+        </main>
+        <template data-user-template>
+            <li class="user">
+                <p class="user-fullname">Повне ім’я: {{ lastName }} {{ firstName }}</p>
+                <p class="user-email">Електронна пошта: {{ email }}</p>
+                <p class="user-password">Хеш пароля: {{ password }}</p>
+            </li>
+        </template>
+    </body>
+</html>

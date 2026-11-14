@@ -1,0 +1,7 @@
+@import url("./variables.css");
+@import url("./person-data.css");
+@import url("./base.css");
+
+.user-page-content:not(:first-child) {
+    margin-block-start: 1em;
+}

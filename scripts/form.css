@@ -1,20 +1,14 @@
-.sign-in {
-    display: flex;
+@import url("./variables.css");
+@import url("./base.css");
 
-    min-block-size: 100dvh;
-
-    align-items: center;
-    justify-content: center;
-}
-
-.sign-in-form {
+.form {
     padding: 2rem;
     border: hsl(var(--color-ui1)) solid 0.125rem;
 
     border-radius: 0.25rem;
 }
 
-.sign-in-form-fields {
+.form-fields {
     display: flex;
 
     margin: 0;
@@ -27,14 +21,14 @@
     border-radius: 0.5rem;
 }
 
-.sign-in-form-fields-legend {
+.form-fields-legend {
     border: hsl(var(--color-ui1)) solid 0.125em;
     padding: 0.25em;
 
     border-radius: 0.125em;
 }
 
-.sign-in-form-field {
+.form-field {
     position: relative;
 
     display: inline-flex;
@@ -43,41 +37,41 @@
     row-gap: 0.5rem;
 }
 
-.sign-in-form-field-input {
+.form-field-input {
     min-inline-size: 10em;
     max-inline-size: 24em;
 }
 
-.sign-in-form-field-error {
+.form-field-error {
     font-size: 0.75em;
     font-style: italic;
 }
 
-.sign-in-form-field-error:empty::before {
+.form-field-error:empty::before {
     content: "Все правильно!";
 }
 
-.sign-in-form-password {
+.form-password {
     display: flex;
 
     flex-direction: column;
     row-gap: 1rem;
 }
 
-.sign-in-form-password-field-input {
+.form-password-field-input {
 }
 
-.sign-in-form-password-visibility-field {
+.form-password-visibility-field {
     display: inline-flex;
 
     align-items: center;
     column-gap: 0.25rem;
 }
 
-.sign-in-form-submit {
+.form-submit {
     inline-size: 100%;
 }
 
-.sign-in-form-submit:not(:first-child) {
+.form-submit:not(:first-child) {
     margin-block-start: 1rem;
 }

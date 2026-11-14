@@ -1,0 +1,18 @@
+@import url("./form.css");
+
+.sign-up {
+    display: flex;
+
+    min-block-size: 100dvh;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-message {
+    text-indent: 0;
+}
+
+.sign-up-message:not(:first-child) {
+    margin-block-start: 0.5rem;
+}

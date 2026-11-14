@@ -1,3 +1,6 @@
+@import url("./fonts.css");
+@import url("./base.css");
+
 *,
 *::before,
 *::after {
@@ -239,4 +242,30 @@ ol {
             inset-inline-start: -1.75rem;
         }
     }
+}
+
+.container {
+    --container-limit: 48rem;
+    --container-offset: 1rem;
+
+    inline-size: 100%;
+    max-inline-size: min(100% - var(--container-offset) * 2, var(--container-limit));
+    margin-inline: auto;
+}
+
+.emphasize {
+    font-style: italic;
+}
+
+.path::before {
+    content: "«";
+}
+
+.path::after {
+    content: "»";
+}
+
+.line-through {
+    text-decoration-style: solid;
+    text-decoration-line: line-through;
 }

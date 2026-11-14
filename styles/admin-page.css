@@ -1,0 +1,49 @@
+@import url("./variables.css");
+@import url("./base.css");
+@import url("./person-data.css");
+
+.users {
+    margin: 0;
+    padding: 0;
+}
+
+.users:not(:first-child) {
+    margin-block-start: 1rem;
+}
+
+.user {
+    padding: 1rem;
+    list-style-type: none;
+
+    border-radius: 0.25rem;
+    background-color: hsl(var(--color-bg2));
+}
+
+.user:not(:first-child) {
+    margin-block-start: 0.5rem;
+}
+
+.user::before {
+    content: none;
+}
+
+.user::marker {
+    content: none;
+}
+
+.user-fullname, .user-email, .user-password {
+    text-indent: 0;
+    word-break: break-all;
+}
+
+:where(.user-fullname, .user-email, .user-password):not(:first-child) {
+    margin-block-start: 0.25em;
+}
+
+.user-fullname, .user-email {
+    text-decoration: underline hsl(var(--color-blue));
+}
+
+.user-password {
+    text-decoration: underline hsl(var(--color-purple));
+}
