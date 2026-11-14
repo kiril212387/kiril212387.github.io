@@ -20,7 +20,7 @@ export const RULES = Object.freeze({
     PASSWORD: Object.freeze({
         MINLENGTH: 8,
         MAXLENGTH: 32,
-        PATTERN: /^[A-Za-z0-9!@#$%^&amp;*_\-=+?]+$/,
+        PATTERN: /^[A-Za-z0-9!@#$%^&;*_\-=+?]+$/,
     }),
     PASSWORD_UPPER: Object.freeze({
         PATTERN: /[A-Z]/,
@@ -32,7 +32,7 @@ export const RULES = Object.freeze({
         PATTERN: /[0-9]/,
     }),
     PASSWORD_SYMBOL: Object.freeze({
-        PATTERN: /[!@#$%^&amp;*_\-=+?]/,
+        PATTERN: /[!@#$%^&;*_\-=+?]/,
     }),
 })
 
