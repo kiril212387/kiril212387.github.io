@@ -58,7 +58,7 @@ export const CODE = Object.freeze({
     PASSWORD_SYMBOL: 18,
 })
 
-export const EMAIL_SEPARATOR = "@";
+const EMAIL_SEPARATOR = "@";
 
 export function checkName(content) {
     if (content.length === 0) {

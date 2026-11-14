@@ -23,20 +23,16 @@ personData.update(user);
 const usersElement = document.querySelector("[data-users]");
 const userTemplate = document.querySelector("[data-user-template]");
 
-function updateUsersElement() {
-    const users = db.getUsers();
+const users = db.getUsers();
 
-    usersElement.innerHTML = "";
+usersElement.innerHTML = "";
 
-    for (const regularUser of users) {
-        regularUser.email = regularUser.email.length === 0 ? "-" : regularUser.email;
+for (const regularUser of users) {
+    regularUser.email = regularUser.email.length === 0 ? "-" : regularUser.email;
 
-        const rendered = Mustache.render(userTemplate.innerHTML, regularUser);
+    const rendered = Mustache.render(userTemplate.innerHTML, regularUser);
 
-        usersElement.insertAdjacentHTML("beforeend", rendered);
-    }
+    usersElement.insertAdjacentHTML("beforeend", rendered);
 }
-
-updateUsersElement();
 
 })();

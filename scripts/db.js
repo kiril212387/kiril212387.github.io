@@ -23,19 +23,12 @@ const DEFAULT_ADMIN_USER = Object.freeze({
 }
 
 export function insertUser({ firstName, lastName, email, password}) {
-    if (validation.checkName(firstName) !== validation.CODE.SUCCESS) {
-        return false;
-    }
+    const isValid = validation.checkName(firstName) === validation.CODE.SUCCESS
+        && validation.checkName(lastName) === validation.CODE.SUCCESS
+        && validation.checkEmail(email) === validation.CODE.SUCCESS
+        && validation.checkPassword(password) === validation.CODE.SUCCESS;
 
-    if (validation.checkName(lastName) !== validation.CODE.SUCCESS) {
-        return false;
-    }
-
-    if (validation.checkEmail(email) !== validation.CODE.SUCCESS) {
-        return false;
-    }
-
-    if (validation.checkPassword(password) !== validation.CODE.SUCCESS) {
+    if (!isValid) {
         return false;
     }
 
@@ -46,6 +39,12 @@ export function insertUser({ firstName, lastName, email, password}) {
             return false;
         }
     };
+
+    for (const admin of db.admins) {
+        if (admin.firstName === firstName && admin.lastName === lastName) {
+            return false;
+        }
+    }
 
     const user = {
         firstName: firstName,
@@ -72,11 +71,10 @@ export function getUser(firstName, lastName, password) {
 }
 
 export function getUserWithHash(firstName, lastName, passwordHash) {
-    if (validation.checkName(firstName) !== validation.CODE.SUCCESS) {
-        return null;
-    }
+    const isValid = validation.checkName(firstName) === validation.CODE.SUCCESS
+        && validation.checkName(lastName) === validation.CODE.SUCCESS;
 
-    if (validation.checkName(lastName) !== validation.CODE.SUCCESS) {
+    if (!isValid) {
         return null;
     }
 
@@ -97,11 +95,10 @@ export function getAdmin(firstName, lastName, password) {
 }
 
 export function getAdminWithHash(firstName, lastName, passwordHash) {
-    if (validation.checkName(firstName) !== validation.CODE.SUCCESS) {
-        return null;
-    }
+    const isValid = validation.checkName(firstName) === validation.CODE.SUCCESS
+        && validation.checkName(lastName) === validation.CODE.SUCCESS;
 
-    if (validation.checkName(lastName) !== validation.CODE.SUCCESS) {
+    if (!isValid) {
         return null;
     }
 

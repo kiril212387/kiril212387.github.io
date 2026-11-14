@@ -35,113 +35,50 @@ const emailInput = signUpFormElement.elements.namedItem("email");
 const passwordInput = signUpFormElement.elements.namedItem("password");
 const passwordVisibilityCheckbox = signUpFormElement.elements.namedItem("password-visibility");
 
-const firstNameInputError = firstNameInput.parentElement.querySelector("[data-field-error]");
-const lastNameInputError = lastNameInput.parentElement.querySelector("[data-field-error]");
-const emailInputError = emailInput.parentElement.querySelector("[data-field-error]");
-const passwordInputError = passwordInput.parentElement.querySelector("[data-field-error]");
+const firstNameError = firstNameInput.parentElement.querySelector("[data-field-error]");
+const lastNameError = lastNameInput.parentElement.querySelector("[data-field-error]");
+const emailError = emailInput.parentElement.querySelector("[data-field-error]");
+const passwordError = passwordInput.parentElement.querySelector("[data-field-error]");
 const button = signUpFormElement.querySelector("button[type=submit]");
 
-{
-    const validationCode = validation.checkName(firstNameInput.value);
-    const newValidationMessage = validationMessages.firstName(validationCode) ?? "";
-    firstNameInput.setCustomValidity(newValidationMessage);
-    firstNameInputError.textContent = newValidationMessage;
-}
-
-firstNameInput.addEventListener("input", () => {
-    const lastValidityValid = firstNameInput.validity.valid;
-
-    const validationCode = validation.checkName(firstNameInput.value);
-    const newValidationMessage = validationMessages.firstName(validationCode) ?? "";
-    if (firstNameInput.validationMessage !== newValidationMessage) {
-        firstNameInput.setCustomValidity(newValidationMessage);
-        firstNameInputError.textContent = newValidationMessage;
-
-        if (lastValidityValid !== firstNameInput.validity.valid) {
-            button.disabled = !signUpFormElement.checkValidity();
-        }
+function setupInput(inputElement, errorElement, validate, validationMessage) {
+    {
+        const validationCode = validate(inputElement.value);
+        const newValidationMessage = validationMessage(validationCode) ?? "";
+        inputElement.setCustomValidity(newValidationMessage);
+        errorElement.textContent = newValidationMessage;
     }
-});
 
-{
-    const validationCode = validation.checkName(lastNameInput.value);
-    const newValidationMessage = validationMessages.lastName(validationCode) ?? "";
-    lastNameInput.setCustomValidity(newValidationMessage);
-    lastNameInputError.textContent = newValidationMessage;
-}
+    inputElement.addEventListener("input", () => {
+        const lastValidityValid = inputElement.validity.valid;
 
-lastNameInput.addEventListener("input", () => {
-    const lastValidityValid = lastNameInput.validity.valid;
+        const validationCode = validate(inputElement.value);
+        const newValidationMessage = validationMessage(validationCode) ?? "";
+        if (inputElement.validationMessage !== newValidationMessage) {
+            inputElement.setCustomValidity(newValidationMessage);
+            errorElement.textContent = newValidationMessage;
 
-    const validationCode = validation.checkName(lastNameInput.value);
-    const newValidationMessage = validationMessages.lastName(validationCode) ?? "";
-    if (lastNameInput.validationMessage !== newValidationMessage) {
-        lastNameInput.setCustomValidity(newValidationMessage);
-        lastNameInputError.textContent = newValidationMessage;
-
-        if (lastValidityValid !== lastNameInput.validity.valid) {
-            button.disabled = !signUpFormElement.checkValidity();
+            if (lastValidityValid !== inputElement.validity.valid) {
+                button.disabled = !signUpFormElement.checkValidity();
+            }
         }
-    }
-});
-
-{
-    const validationCode = validation.checkEmail(emailInput.value);
-    const newValidationMessage = validationMessages.email(validationCode) ?? "";
-    emailInput.setCustomValidity(newValidationMessage);
-    emailInputError.textContent = newValidationMessage;
+    });
 }
 
-emailInput.addEventListener("input", () => {
-    const lastValidityValid = emailInput.validity.valid;
+setupInput(firstNameInput, firstNameError, validation.checkName, validationMessages.firstName);
+setupInput(lastNameInput, lastNameError, validation.checkName, validationMessages.lastName);
+setupInput(emailInput, emailError, validation.checkEmail, validationMessages.email);
+setupInput(passwordInput, passwordError, validation.checkPassword, validationMessages.password);
 
-    const validationCode = validation.checkEmail(emailInput.value);
-    const newValidationMessage = validationMessages.email(validationCode) ?? "";
-    if (emailInput.validationMessage !== newValidationMessage) {
-        emailInput.setCustomValidity(newValidationMessage);
-        emailInputError.textContent = newValidationMessage;
-
-        if (lastValidityValid !== emailInput.validity.valid) {
-            button.disabled = !signUpFormElement.checkValidity();
-        }
-    }
-});
-
-{
-    const validationCode = validation.checkPassword(passwordInput.value);
-    const newValidationMessage = validationMessages.password(validationCode) ?? "";
-    passwordInput.setCustomValidity(newValidationMessage);
-    passwordInputError.textContent = newValidationMessage;
-}
-
-passwordInput.addEventListener("input", () => {
-    const lastValidityValid = passwordInput.validity.valid;
-
-    const validationCode = validation.checkPassword(passwordInput.value);
-    const newValidationMessage = validationMessages.password(validationCode) ?? "";
-    if (passwordInput.validationMessage !== newValidationMessage) {
-        passwordInput.setCustomValidity(newValidationMessage);
-        passwordInputError.textContent = newValidationMessage;
-
-        if (lastValidityValid !== passwordInput.validity.valid) {
-            button.disabled = !signUpFormElement.checkValidity();
-        }
-    }
-});
-
-if (passwordVisibilityCheckbox.checked) {
-    passwordInput.type = "text";
-} else {
-    passwordInput.type = "password";
-}
-
-passwordVisibilityCheckbox.addEventListener("change", () => {
+function togglePasswordVisibility() {
     if (passwordVisibilityCheckbox.checked) {
         passwordInput.type = "text";
     } else {
         passwordInput.type = "password";
     }
-});
+}
+
+passwordVisibilityCheckbox.addEventListener("change", () => { togglePasswordVisibility() });
 
 button.disabled = !signUpFormElement.checkValidity();
 
